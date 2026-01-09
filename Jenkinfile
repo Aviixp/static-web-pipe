@@ -25,21 +25,5 @@ pipeline {
                 '''
             }
         }
-
-        stage('Show Website URL') {
-            steps {
-                echo "✅ Static Website is LIVE"
-                echo "👉 Open in browser: http://localhost:8090"
-            }
-        }
-    }
-
-    post {
-        success {
-            script {
-                currentBuild.description =
-                    "🌐 <a href='http://localhost:8090' target='_blank'>Open Static Website</a>"
-            }
-        }
     }
 }
